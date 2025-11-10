@@ -10,4 +10,11 @@ async function impl(e) {
         return networkResponse; // Visszadjuk
     }
 }
+
+async function notif(e, _self) {
+    const text = e.data?.text() || "[NINCS ÜZENET]";
+    const prom = _self.registration.showNotification("Chat Notification", {body: text, icon:"logo192.png"});
+    e.waitUntil(prom);
+}
 self.addEventListener("fetch", e => e.respondWith(impl(e))); // Eseményre feliratkozás
+self.addEventListener("push", e => notif(e, self));
