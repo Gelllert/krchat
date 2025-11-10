@@ -1,0 +1,7 @@
+.IconButton{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    background: #2ae;
+}

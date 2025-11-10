@@ -1,0 +1,101 @@
+html {
+font-family: var(--text-font); /*Font*/
+font-size: var(--font-size); /*Font mérete (16px=12pt)*/
+line-height: 1.5; /*Sormagasság, 16px*1.5=24px, tipikus mostanában*/
+background: var(--html-background); /*Sötét téma sötét háttérrel*/
+color: var(--text-color); /*Sötét téma fehér betűkkel*/
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+html,
+body,
+div {
+margin: 0; /* CSS reset */
+padding: 0; /* CSS reset */
+display: grid; /* grid-re állunk át mindenhol */
+grid: minmax(0, 1fr) / minmax(0, 1fr); /* Az egyetlen gyerek szülő méretű */
+}
+body {
+min-height: 100vh; /* ablak méretű */
+max-height: 100vh; /* ablak méretű */
+}
+
+input,
+button,
+a {
+font-family: inherit;
+font-size: var(--font-size);
+line-height: inherit;
+border: 0; /* ne legyen kerete a buttonnak és az inputnak */
+color: var(--text-color);
+}
+
+input {
+background: var(--input-bg); /* Sötét téma */
+}
+button {
+padding: 8px 16px; /* Tágas */
+background: var(--button-bg); /* Sötét téma */
+font-weight: 600; /* Bold */
+border-radius: 7px; /* Lekerekített */
+box-shadow: 1px 2px 10px black; /* Árnyék */
+transition: all 145ms ease-out; /* Átmenet az árnyékra és színre, ami változik */
+&:hover {
+box-shadow: 2px 5px 20px black; /* Nagyobb árnyék, ha kiemelkedik */
+background: var(--button-hover-bg); /* Megváltoztatja a színét, ha fölé visszük az egeret */
+}
+&:active {
+box-shadow: none; /* Lenyomva nincs árnyék */
+background: var(--button-active-bg); /* Megváltoztatja a színét, ha aktiváljuk (lenyomjuk) */
+}
+}
+
+:root {
+--html-background: #333336;
+--font-size: 16px;
+--text-color: white;
+--button-bg: #2ae;
+--button-hover-bg: #3cf;
+--button-active-bg: #17b;
+--input-bg: black;
+}
+
+.theme-light {
+--html-background: white;
+--font-size: 16px;
+--text-color: rgb(0, 0, 0);
+--button-bg: rgb(0, 170, 255);
+--button-hover-bg: #3cf;
+--button-active-bg: #17b;
+--input-bg: rgb(189, 189, 189);
+}
+
+.theme-red {
+--html-background: rgb(255, 119, 0);
+--font-size: 24px;
+--text-font: 'bold 40px "Comic Sans MS", cursive, sans-serif';
+--text-color: rgb(3, 72, 248);
+--button-bg: rgb(232, 170, 13);
+--button-hover-bg: rgb(226, 226, 10);
+--button-active-bg: rgb(9, 64, 75);
+--input-bg: rgb(199, 90, 18);
+}
+
+.theme-root {
+--html-background: #333336;
+--font-size: 16px;
+--text-color: white;
+--button-bg: #2ae;
+--button-hover-bg: #3cf;
+--button-active-bg: #17b;
+--input-bg: black;
+}
